@@ -24,7 +24,7 @@ function App() {
 			for (let i = 0; i < exams.length; i++) {
 				score += 0.3 * exams[i].theory_score + 0.7 * exams[i].practice_score;
 			}
-			setWez(Math.floor(score / exams.length));
+			setWez(score / exams.length);
 		} else {
 			setWez(0);
 		}
@@ -49,7 +49,9 @@ function App() {
 			<main className="container mx-auto max-w-2xl px-4 py-8 flex flex-col gap-8">
 				<div className="p-8 border border-pwr rounded-md">
 					<h2 className="text-3xl text-center">
-						<span className="font-bold text-pwr-yellow">{0.5 * wez}</span>
+						<span className="font-bold text-pwr-yellow">
+							{Math.round(0.5 * wez * 100) / 100}
+						</span>
 						<br />
 						dodatkowych punktów
 					</h2>
