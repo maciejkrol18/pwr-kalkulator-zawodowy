@@ -7,6 +7,7 @@ export default {
 				"pwr-dark": "#1e1f24",
 				"pwr-violet": "#6f4eb0",
 				"pwr-yellow": "#ffda54",
+				muted: "#555555",
 			},
 			fontFamily: {
 				pwr: "Plus Jakarta Sans, sans-serif",

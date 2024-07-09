@@ -34,14 +34,17 @@ function App() {
 
 	return (
 		<div className="min-h-screen flex flex-col text-white bg-black font-pwr">
-			<header className="flex items-end py-10 min-h-64">
-				<div className="container mx-auto px-4 text-center">
+			<header className="flex items-end py-10 min-h-64 bg-pwr-gradient">
+				<div className="flex flex-col gap-2 container mx-auto px-4 text-center">
 					<h1 className="text-5xl leading-snug">
 						Policz dodatkowe punkty z egzaminu zawodowego
 					</h1>
+					<p className="text-sm leading-snug">
+						Strona nie jest powiązana z Politechniką Wrocławską
+					</p>
 				</div>
 			</header>
-			<main className="container mx-auto px-4 py-8 flex flex-col gap-8">
+			<main className="container mx-auto max-w-2xl px-4 py-8 flex flex-col gap-8">
 				<div className="p-8 border border-pwr rounded-md">
 					<h2 className="text-3xl text-center">
 						<span className="font-bold text-pwr-yellow">{0.5 * wez}</span>
@@ -60,7 +63,7 @@ function App() {
 						<EntryManager entry={entry} setEntries={setExams} key={idx} />
 					))
 				) : (
-					<p className="text-[#555555]">
+					<p className="text-muted">
 						Brak wyników. Dodaj nowy klikając w powyższy plus
 					</p>
 				)}
