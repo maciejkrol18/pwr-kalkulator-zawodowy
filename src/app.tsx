@@ -25,6 +25,8 @@ function App() {
 				score += 0.3 * exams[i].theory_score + 0.7 * exams[i].practice_score;
 			}
 			setWez(Math.floor(score / exams.length));
+		} else {
+			setWez(0);
 		}
 	};
 
