@@ -5,14 +5,13 @@ import Plus from "./assets/plus.svg";
 import { ExamEntry } from "./types/exam-entry";
 
 function App() {
-	const [count, setCount] = useState<number>(0);
 	const [wez, setWez] = useState<number>(0);
 	const [exams, setExams] = useState<ExamEntry[]>([]);
 
 	const addExam = () => {
 		const newExam: ExamEntry = {
 			id: uuidv4(),
-			title: "Nowy wynik",
+			title: `Kwalifikacja #${exams.length + 1}`,
 			theory_score: 0,
 			practice_score: 0,
 		};
@@ -22,29 +21,22 @@ function App() {
 	const calculateWez = () => {
 		if (exams.length > 0) {
 			let score = 0;
-			exams.forEach((entry) => {
-				console.log(
-					entry.title,
-					(score += 0.3 * entry.theory_score + 0.7 * entry.practice_score)
-				);
-				score += 0.3 * entry.theory_score + 0.7 * entry.practice_score;
-			});
-			console.log(score, exams.length);
-			console.log(score / exams.length);
-			setWez(score / exams.length);
+			for (let i = 0; i < exams.length; i++) {
+				score += 0.3 * exams[i].theory_score + 0.7 * exams[i].practice_score;
+			}
+			setWez(Math.floor(score / exams.length));
 		}
 	};
 
 	useEffect(() => {
 		calculateWez();
-		console.log(exams);
 	}, [exams]);
 
 	return (
 		<div className="min-h-screen flex flex-col text-white bg-black font-pwr">
 			<header className="flex items-end py-10 min-h-64">
 				<div className="container mx-auto px-4 text-center">
-					<h1 className="text-5xl">
+					<h1 className="text-5xl leading-snug">
 						Policz dodatkowe punkty z egzaminu zawodowego
 					</h1>
 				</div>
@@ -63,10 +55,15 @@ function App() {
 						<img src={Plus} />
 					</button>
 				</div>
-				{exams &&
+				{exams.length > 0 ? (
 					exams.map((entry, idx) => (
 						<EntryManager entry={entry} setEntries={setExams} key={idx} />
-					))}
+					))
+				) : (
+					<p className="text-[#555555]">
+						Brak wyników. Dodaj nowy klikając w powyższy plus
+					</p>
+				)}
 			</main>
 		</div>
 	);

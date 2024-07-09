@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				"pwr-dark": "#1e1f24",
-				"pwr-violet": "rgb(204, 153, 255)",
+				"pwr-violet": "#6f4eb0",
 				"pwr-yellow": "#ffda54",
 			},
 			fontFamily: {
