@@ -48,22 +48,24 @@ export default function EntryManager({ entry, setEntries }: EntryManagerProps) {
 
 	return (
 		<div className="flex flex-col gap-4 px-4 py-8 rounded-md border border-pwr text-white">
-			<div className="flex gap-2">
+			<label htmlFor={`title-${entry.id}`} className="flex gap-2">
 				<img src={LetterT} alt="" className="w-6 h-6" />
 				<p>Tytuł</p>
-			</div>
+			</label>
 			<input
 				type="text"
+				id={`title-${entry.id}`}
 				defaultValue={entry.title}
 				onChange={(e) => handleTitleChange(e.target.value)}
 				className="text-black p-2 rounded-md"
 			/>
-			<div className="flex gap-2">
+			<label htmlFor={`theory-${entry.id}`} className="flex gap-2">
 				<img src={PenTool} alt="" className="w-6 h-6" />
 				<p>Wynik z teorii</p>
-			</div>
+			</label>
 			<input
 				type="number"
+				id={`theory-${entry.id}`}
 				min={0}
 				max={100}
 				defaultValue={entry.theory_score}
@@ -71,12 +73,13 @@ export default function EntryManager({ entry, setEntries }: EntryManagerProps) {
 				className="text-black p-2 rounded-md"
 				ref={theoryInputRef}
 			/>
-			<div className="flex gap-2">
+			<label htmlFor={`practice-${entry.id}`} className="flex gap-2">
 				<img src={Wrench} alt="" className="w-6 h-6" />
 				<p>Wynik z praktyki</p>
-			</div>
+			</label>
 			<input
 				type="number"
+				id={`practice-${entry.id}`}
 				min={0}
 				max={100}
 				defaultValue={entry.practice_score}
