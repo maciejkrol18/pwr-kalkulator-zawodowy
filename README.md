@@ -1,2 +1,2 @@
-# pwr-kalkulator-informatyk
-Narzędzie do szybkiego obliczenia ilości dodatkowych punktów z egzaminu zawodowego na Politechnice Wrocławskiej
+# [Kalkulator zawodowy PWR](https://maciejkrol18.github.io/pwr-kalkulator-zawodowy/)
+Proste narzędzie do obliczenia ilości dodatkowych punktów z egzaminu zawodowego na poziomie technika przy rekrutacji na Politechnikę Wrocławską. Projekt nie jest powiązany z Politechniką Wrocławską. Więcej informacji na temat rekrutacji [tutaj](https://rekrutacja.pwr.edu.pl/rekrutacja/kryteria-przyjec/kryteria-przyjec-na-studia-i-stopnia/#tab-1-8-dyplom-zawodowy-na-poziomie-technika)
