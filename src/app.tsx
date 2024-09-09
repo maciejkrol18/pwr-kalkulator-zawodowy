@@ -2,13 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { useEffect, useState } from 'react'
 import EntryManager from './components/entry-manager'
 import Plus from './assets/plus.svg'
-
-interface ExamEntry {
-  id: string
-  title: string
-  theory_score: number
-  practice_score: number
-}
+import type { ExamEntry } from './types/exam-entry'
 
 function App() {
   const [wez, setWez] = useState<number>(0)
